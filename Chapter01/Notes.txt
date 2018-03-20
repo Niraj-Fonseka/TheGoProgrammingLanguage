@@ -29,6 +29,11 @@ Blank Identifier ( _ )
 
 
 s : = "" 
+    - can be used within a function 
+    - not for package level 
 var s string 
+    - defailt initilization to the zeron value 
 var s = ""
+    - rarely used except for creating multiple varibales 
 var s string = ""
+    - explicit about the variable type 
