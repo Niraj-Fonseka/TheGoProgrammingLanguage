@@ -1,0 +1,34 @@
+Go is a compiled language 
+Go natively handles Unicode, so it can process text in all world's languages 
+
+Creating a executable binary 
+
+go build helloworld.go
+
+The import declaration must follow the package declaration, After that a program consists of the 
+declarations of functions, variables , constants and types
+
+
+var s  <- initilized to zeon if its not explicitly initilized
+
+//While loop
+for condition {
+
+    //,,,
+}
+
+
+//Infinite loop
+for {
+
+}
+
+Blank Identifier ( _ ) 
+    - Used whenever syntax requires a variable name but program logic doesnt 
+      ie : discard the index when we only need the element value
+
+
+s : = "" 
+var s string 
+var s = ""
+var s string = ""
