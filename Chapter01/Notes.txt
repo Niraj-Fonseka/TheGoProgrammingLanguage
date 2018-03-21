@@ -37,3 +37,19 @@ var s = ""
     - rarely used except for creating multiple varibales 
 var s string = ""
     - explicit about the variable type 
+
+
+// 1.3 
+%d          --> decimal integer
+%x, %o, %b  --> integer in hexadecimal, octal, binary
+%f, %g, %e  --> floating-p oint number: 3.141593 3.141592653589793 3.141593e+00
+%t          --> boolean: true or false
+%c          --> rune (Unicode code point)
+%s          --> string
+%q          --> quoted string "abc" or rune 'c'
+%v          --> any value in a natural for mat
+%T          --> type of any value
+%%          --> literal percent sign (no operand)
+
+A map is a reference to the data structure created by make. When the map 
+is passed to a function the function recives a copy of the reference.
