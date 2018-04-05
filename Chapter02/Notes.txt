@@ -1,0 +1,81 @@
+* A var declaration tends to be reserved for local variables that need an 
+explicit type that differes from taht of the initilizer expression. or when the variable will be assigned value later and its initial value 
+unimportant
+
+var boiling float64 = 100
+
+- Pointers 
+
+x := 1
+p := &x //address of x 
+*p = 2 //resetting the p variable to two ( dereferencing)
+
+
+Its perfectly safe for a function to return the address of a local var
+
+var p = f()
+
+func f() * int {
+    v := 1
+    return &v
+}
+
+for instance in the code above the local var v created will remain in existence even after the call has returned. The pointer p will still refer to it. 
+
+
+* The new function
+
+Another way to create a variable  new(T)
+
+p := new(int) // p of type *int, points to an unnamed int variable
+
+we can use new(T) in an expression. new is only a syntactic convenience 
+
+
+* Variable Lifetimes 
+
+Package level variables last as long as the program runs 
+Local variables hhave dynamic lifetimes ( lasts until it becomes unreachable - garbage collected )
+
+the compiler may choose to allocate local variables on the heap or on thhe stack but, 
+perhaps surprisingly tis choice is not determined by whether var or new was used to declare the variable
+
+// Memory Call back - heap is shared among threads
+
+
+* Tuple assignment 
+
+Allows several variables to be assigned once.
+
+x , y = y , x 
+a[i] , a[j] = a[j] , a[i]
+
+//computing thhe greatest common divistor ( GCD )
+func gcd( x , y int) int {
+    for y != 0 {
+        x,y = y , x%y
+    }
+    return x
+}
+//sequence of trivial assignements
+i , j , k = 2 , 3 , 5
+
+
+* Package Intilization
+
+Package Intilization begins by Intilizing a package-level variables in the order 
+in which thhey are declared, expect that dependencies are resoloved first
+
+if the package has multiple .go files they are Intilized in the order in whichh thhe files 
+are given to the compiler , the go tool sorts .go files by name before invoking the compiler
+
+Each variable declared at package level starts life with the value of its initlizer expression,
+if any, nut for some variable, like tables of data, an initlizer express may not be the simplest
+way to set its init value. in that case the init function mechanism may be simpler. Any files may contain any number of function whose declaration is just 
+
+func ini(){ /*............. */ }
+
+init functions cant be called or referenced. In each file init functions are 
+automatically executed when the program starts, in the order they are declared. 
+
+

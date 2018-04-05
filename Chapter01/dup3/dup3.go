@@ -9,6 +9,7 @@ import (
 
 func main() {
 	counts := make(map[string]int)
+	var fileNames string
 	for _, filename := range os.Args[1:] {
 		data, err := ioutil.ReadFile(filename)
 		if err != nil {
@@ -17,11 +18,15 @@ func main() {
 		}
 		for _, line := range strings.Split(string(data), "\n") {
 			counts[line]++
+			fileNames += filename + " ,"
 		}
 	}
 	for line, n := range counts {
 		if n > 1 {
 			fmt.Printf("%d\t%s\n", n, line)
 		}
+		fmt.Println(fileNames)
 	}
+	fmt.Println(fileNames)
+
 }
