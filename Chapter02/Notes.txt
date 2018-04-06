@@ -79,3 +79,16 @@ init functions cant be called or referenced. In each file init functions are
 automatically executed when the program starts, in the order they are declared. 
 
 
+* Scope
+
+- Synthetic block
+a sqeuence of statements enclosed in braces like those that surround the body of a function or loop
+
+- lexical blocks 
+blocks that include groupings of declarations that are not explicitly surrounded by brances 
+in the source code 
+
+- Universal Block 
+Theres a lexical block for the entire source code 
+
+A declaration of a lexical block determines its scope 
